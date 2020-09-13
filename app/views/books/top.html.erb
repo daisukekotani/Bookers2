@@ -1,0 +1,7 @@
+<h1>Books#top</h1>
+<p>Find me in app/views/books/top.html.erb</p>
+
+
+<%= link_to "Log in", user_session_path, method: :post %>
+<%= link_to "Sign up", new_user_session_path, method: :get %>
+<%= link_to "logout", destroy_user_session_path, method: :delete, data: { confirm: 'Are you sure?' } %>
