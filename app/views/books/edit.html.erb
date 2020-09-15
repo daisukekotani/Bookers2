@@ -1,2 +1,78 @@
-<h1>Books#edit</h1>
-<p>Find me in app/views/books/edit.html.erb</p>
+<html><head><style type="text/css">.turbolinks-progress-bar {
+  position: fixed;
+  display: block;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: #0076ff;
+  z-index: 9999;
+  transition: width 300ms ease-out, opacity 150ms 150ms ease-in;
+  transform: translate3d(0, 0, 0);
+}</style>
+
+
+
+
+    <link rel="stylesheet" media="all" href="/assets/application-945628f9f95377705c9108ec9a9704e6f6ffa0767c02e34400d75b5be64fc1b7.css" data-turbolinks-track="reload">
+    <script src="/assets/application-11e027fe501efa6924bd87aa8f6ef7436fd1539022b412029c4a223dec9664f8.js" data-turbolinks-track="reload"></script>
+  <title>Bookers</title><meta name="csrf-param" content="authenticity_token"><meta name="csrf-token" content="Id+HlEqUfEHWdVq8r+9QKSrnH9Kx903LxU4tM4j+DaEud5QR0MieuWEf7uiFq83M1l/uTuxlFci4dQjSyn6MYg=="></head>
+
+  <body>
+    <header class="navbar navbar-fixed-top navbar-inverse">
+  <div class="container">
+    <nav class="nav navbar-nav navbar-left">
+      <span>Bookers</span>
+    </nav>
+    <nav>
+      <ul class="nav navbar-nav navbar-right">
+          <li><a class="glyphicon glyphicon-home home" href="/users/24449"> Home</a></li>
+          <li><a class="glyphicon glyphicon-user users" href="/users"> Users</a></li>
+          <li><a class="glyphicon glyphicon-book books" href="/books"> Books</a></li>
+          <li><a class="glyphicon glyphicon-log-out logout" rel="nofollow" data-method="delete" href="/users/sign_out"> logout</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+  	<div class="body">
+      <div class="container">
+
+        <p id="notice"></p>
+
+
+      	<div class="row">
+	<div class="col-md-6 col-md-offset-3">
+		<h1>Editing Book</h1>
+ <%= form_with model:@book, local: true do |f| %>
+
+	<h4>title</h4>
+<%= f.text_field :title %>
+
+<h4>Body</h4>
+<%= f.text_field :option %>
+
+<%= f.submit 'Update Book' %>
+<% end %>
+
+		<%= link_to "Show", book_path %>
+  	<%= link_to "Back",books_path %>
+    </div>
+    <div class="col-md-3"></div>
+</div>
+      </div>
+    </div>
+
+    <footer>
+  <div class="container">
+  	<div class="row">
+    	<div class="col-xs-3 col-xs-offset-9">
+    		<p>CopyRight Infratop.inc</p>
+    	</div>
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>
