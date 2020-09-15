@@ -16,11 +16,11 @@ class BooksController < ApplicationController
   def index
     @books = Book.all.order(create_at: :desc)
     @book = Book.new
+
   end
 
   def show
     @book = Book.find(params[:id])
-
   end
 
   def edit
