@@ -1,0 +1,76 @@
+<html><head><style type="text/css">.turbolinks-progress-bar {
+  position: fixed;
+  display: block;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: #0076ff;
+  z-index: 9999;
+  transition: width 300ms ease-out, opacity 150ms 150ms ease-in;
+  transform: translate3d(0, 0, 0);
+}</style>
+
+
+
+
+    <link rel="stylesheet" media="all" href="/assets/application-945628f9f95377705c9108ec9a9704e6f6ffa0767c02e34400d75b5be64fc1b7.css" data-turbolinks-track="reload">
+    <script src="/assets/application-11e027fe501efa6924bd87aa8f6ef7436fd1539022b412029c4a223dec9664f8.js" data-turbolinks-track="reload"></script>
+  <title>Bookers</title><meta name="csrf-param" content="authenticity_token"><meta name="csrf-token" content="UFoM+SxvFhspFe+oavYDcs31X6aMSa2bP8Fi7BEB3pUb/PPoaVqyy9aRrScUiwddx00ioNlcOMhh6rlxOj/MBw=="></head>
+
+  <body>
+    <header class="navbar navbar-fixed-top navbar-inverse">
+  <div class="container">
+    <nav class="nav navbar-nav navbar-left">
+      <span>Bookers</span>
+    </nav>
+    <nav>
+      <ul class="nav navbar-nav navbar-right">
+          <li><a class="glyphicon glyphicon-home home" href="/users/24492"> Home</a></li>
+          <li><a class="glyphicon glyphicon-user users" href="/users"> Users</a></li>
+          <li><a class="glyphicon glyphicon-book books" href="/books"> Books</a></li>
+          <li><a class="glyphicon glyphicon-log-out logout" rel="nofollow" data-method="delete" href="/users/sign_out"> logout</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+
+
+  	<div class="body">
+      <div class="container">
+        <p id="notice"></p>
+      	<h2>User info</h2>
+     <%= form_with model:@user, local:true do |f| %>
+
+     <h4>Name</h4>
+     <%= f.text_field :name %>
+
+    <!--<h4>Image</h4>-->
+    <!--< attachment_image_tag @user, :profile_image, :fill, 60, 60 %>-->
+
+    <!--<h4>ProfileImage</h4>-->
+    <!-- < f.attachment_field :profile_image %>-->
+
+    <h4>Introduction</h4>
+    <%= f.text_field :introduction %>
+
+    <%= f.submit "Update User" %>
+    <% end %>
+      </div>
+    </div>
+
+    <footer>
+  <div class="container">
+  	<div class="row">
+    	<div class="col-xs-3 col-xs-offset-9">
+    		<p>CopyRight Infratop.inc</p>
+    	</div>
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>
