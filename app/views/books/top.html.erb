@@ -1,12 +1,5 @@
 <h4>welcome to Bookers</h4>
 
- <!--ヘッダー-->
- <!--Home-->
- <!--About-->
- <!--Sign in-->
- <!--login-->
- <!--リンク作る-->
-
 <%= link_to "Log in", user_session_path, method: :post %>
 <%= link_to "Sign up", new_user_session_path, method: :get %>
 <%= link_to "logout", destroy_user_session_path, method: :delete, data: { confirm: 'Are you sure?' } %>
