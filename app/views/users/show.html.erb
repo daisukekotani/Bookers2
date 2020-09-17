@@ -1,72 +1,44 @@
 <html>
   <head>
     <title>Bookers</title>
-    <meta name="csrf-param" content="authenticity_token">
-<meta name="csrf-token" content="fbRi05YHUfma0V6rTIe/erO/q/4AP5kG+4Bn1u8wZy9yHHFWDFuzAS276v9mwyKfTwdaYl2twQWGu0I3rbDm7A==">
 
-    <link rel="stylesheet" media="all" href="/assets/application-945628f9f95377705c9108ec9a9704e6f6ffa0767c02e34400d75b5be64fc1b7.css" data-turbolinks-track="reload">
-    <script src="/assets/application-11e027fe501efa6924bd87aa8f6ef7436fd1539022b412029c4a223dec9664f8.js" data-turbolinks-track="reload"></script>
-  </head>
-
-  <body>
-    <header class="navbar navbar-fixed-top navbar-inverse">
-  <div class="container">
-    <nav class="nav navbar-nav navbar-left">
-      <span>Bookers</span>
-    </nav>
-    <nav>
-      <ul class="nav navbar-nav navbar-right">
-          <li><%= link_to 'Home', user_path(@user.id) %></li>
-          <li> <%= link_to 'Users', users_path %> </li>
-          <li> <%= link_to 'Books', books_path %></li>
-          <li> <%= link_to "logout",destroy_user_session_path, method: :delete, "data-confirm" => "Are you sure?"%></li>
-      </ul>
-    </nav>
-  </div>
+<span>Bookers</span>
+<header>
+  <nav>
+    <ul class="nav navbar-nav navbar-right">
+      <li><%= link_to 'Home', user_path(@user.id) %></li>
+      <li> <%= link_to 'Users', users_path %> </li>
+      <li> <%= link_to 'Books', books_path %></li>
+      <li> <%= link_to "logout",destroy_user_session_path, method: :delete, "data-confirm" => "Are you sure?"%></li>
+    </ul>
+  </nav>
 </header>
 
-  	<div class="body">
-      <div class="container">
+<h2>User info</h2>
+<%= attachment_image_tag @user, :profile_image, :fill, 100, 100 %>
+<table>
+  <tbody>
+    <tr>
+      <th>name</th>
+      <th><%= @user.name %></th>
+    </tr>
+    <tr>
+      <th>introduction</th>
+      <th><%= @user.introduction %></th>
+    </tr>
+    <tr>
+      <th><%= link_to "プロフィール編集", edit_user_path(@user), class: "pull-right" %></p></th>
+    </tr>
+  </tbody>
+</table>
 
-        <p id="notice">Signed in successfully.</p>
-
-
-      	<div class="row">
-
-  <div class="col-xs-3">
-    <h2>User info</h2>
-       <%= attachment_image_tag @user, :profile_image, :fill, 100, 100 %>
-     <table>
-      <tbody>
-      <tr>
-    	  <th>name</th>
-    	  <th><%= @user.name %></th>
-      </tr>
-      <tr>
-        <th>introduction</th>
-    	  <th><%= @user.introduction %></th>
-    	 </tr>
-    	<tr>
-    	  <th><%= link_to "プロフィール編集", edit_user_path(@user), class: "pull-right" %></p></th>
-      </tr>
-      </tbody>
-      </table>
-
-<div class="row">
-  <a class="col-xs-12 btn btn-default glyphicon glyphicon-wrench edit_user_24342" href="/users/24342/edit"></a>
-</div>
-
-    <h2>New book</h2>
-    <%= form_with model:@book, url:'/books', local:true do |f| %>
-
-  <h4>Title</h4>
-  <%= f.text_field :title %>
-
-  <h4>option</h4>
-  <%= f.text_area :option %>
-
-  <%= f.submit 'CreateBook' %>
-
+<h2>New book</h2>
+<%= form_with model:@book, url:'/books', local:true do |f| %>
+<h4>Title</h4>
+<%= f.text_field :title %>
+<h4>option</h4>
+<%= f.text_area :option %>
+<%= f.submit 'CreateBook' %>
 <% end %>
 
   <h1>Books</h1>
@@ -90,18 +62,9 @@
 </table>
 <% end %>
 
-    <footer>
-  <div class="container">
-  	<div class="row">
-    	<div class="col-xs-3 col-xs-offset-9">
-    		<p>CopyRight Infratop.inc</p>
-    	</div>
-    </div>
-  </div>
+<footer>
+  <p>CopyRight Infratop.inc</p>
 </footer>
-
-
-
 
 </body>
 </html>
