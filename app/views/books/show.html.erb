@@ -49,7 +49,7 @@
 <h1>Book detail</h1>
 <!--ユーザーアイコンを表示させる-->
 <%= @book.title %>
-<%= @book.option %>
+<%= @book.opinion %>
 <%= link_to "Edit",edit_book_path(@book)%>
 <%= link_to "Destroy",book_path(@book), method: :delete, "data-confirm" => "Are you sure?"%>
 
