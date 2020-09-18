@@ -9,5 +9,5 @@ class User < ApplicationRecord
 
   validates :name, {presence: true}
   validates :name, length: { in: 2..20 }  # 「2文字以上20文字以下はture」
-
+  validates :introduction, length: { maximum: 50 }
 end

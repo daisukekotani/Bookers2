@@ -4,7 +4,11 @@
     <title>Bookers</title>
 
   </head>
-
+    <% if flash[:notice] %>
+    <div class="flash">
+      <%= flash[:notice]%>
+    </div>
+    <% end %>
   <header>
     <% if user_signed_in? %>
       <li>
