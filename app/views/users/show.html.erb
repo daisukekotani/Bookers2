@@ -5,6 +5,9 @@
 
 <h2>User info</h2>
 <%= attachment_image_tag @user, :profile_image, :fill, 100, 100 %>
+<% if @user.id == current_user.id %>
+    <p><%= link_to "プロフィール編集", edit_user_path(@user), class: "pull-right" %></p>
+  <% end %>
 <table>
   <tbody>
     <tr>
@@ -16,7 +19,7 @@
       <th><%= @user.introduction %></th>
     </tr>
     <tr>
-      <th><%= link_to "プロフィール編集", edit_user_path(@user), class: "pull-right" %></p></th>
+      <th></p></th>
     </tr>
   </tbody>
 </table>
