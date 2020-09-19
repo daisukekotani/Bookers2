@@ -9,6 +9,7 @@ end
 
 def index
   @users = User.all.order(create_at: :desc)
+  @book = Book.new
 end
 
 def edit
