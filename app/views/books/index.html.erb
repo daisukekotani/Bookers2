@@ -1,5 +1,7 @@
-
-
+<body>
+<div class="container">
+<div class="row">
+<div class="col-xs-3">
 <h2>User info</h2>
 <%= attachment_image_tag current_user, :profile_image, :fill, 100, 100 %>
 <% if user_signed_in? %>
@@ -29,7 +31,9 @@
 <%= f.text_area :opinion %>
 <%= f.submit 'CreateBook' %>
 <% end %>
+</div><!--col-xs-3 -->
 
+<div class="col-xs-9">
 <h1>Books</h1>
 <% @books.each do |book| %>
 
@@ -47,9 +51,22 @@
         <td><span><%= link_to user_path(book.user.id) do %><%= attachment_image_tag book.user, :profile_image, :fill, 60, 60%><% end %></span></td>
         <td><span><%= link_to book.title, book_path(book.id) %></span></td>
         <td><span><%= book.opinion %></span></td>
-
+        <% end %>
       </tr>
   </tbody>
 </table>
-<% end %>
+</div><!--col-xs-9 -->
+</div><!--row -->
+</div><!--container -->
+
+</div>
+</body>
+<footer>
+  <p>CopyRight Infratop.inc</p>
+
+</footer>
+
+</html>
+
+
 
