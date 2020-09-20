@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root "books#top"
+  root "homes#top"
   devise_for :users
   resources :books
   resources :users
