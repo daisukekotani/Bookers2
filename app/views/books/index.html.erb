@@ -1,3 +1,16 @@
+<html>
+<% if @book.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@book.errors.count, "error") %> prohibited this product from being saved:</h2>
+
+        <ul>
+          <% @book.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+          <% end %>
+          </ul>
+    </div>
+  <% end %>
+
 <body>
 <div class="container">
 <div class="row">
@@ -22,6 +35,7 @@
     </tr>
   </tbody>
 </table>
+
 
 <h2>New book</h2>
 <%= form_with model:@book, url:'/books', local:true do |f| %>
