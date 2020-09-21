@@ -1,4 +1,5 @@
 class BooksController < ApplicationController
+ before_action :login_check, only: [:new, :create, :index, :show, :edit, :update, :destroy]
   def top
   end
 
@@ -30,14 +31,21 @@ class BooksController < ApplicationController
 
   def edit
     @book = Book.find(params[:id])
-    @book = Book.new
+      if @book.user == current_user
+      render "edit"
+      else
+        redirect_to books_path
+      end
   end
 
   def update
     @book = Book.find(params[:id])
-    @book.update(book_params)
+    if @book.update(book_params)
     flash[:notice] = "You have updated book successfully."
     redirect_to book_path(@book.id)
+    else
+      render "edit"
+    end
   end
 
   def destroy
@@ -52,3 +60,10 @@ private
     params.require(:book).permit(:title, :body)
   end
 end
+
+def login_check
+    unless user_signed_in?
+      redirect_to user_session_path
+    end
+end
+
