@@ -1,6 +1,8 @@
+
 <% if @book.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@book.errors.count, "error") %> prohibited this product from being saved:</h2>
+
 
         <ul>
           <% @book.errors.full_messages.each do |message| %>
@@ -12,9 +14,6 @@
 
 
 
-
-
-
 <h1>Editing Book</h1>
 <%= form_with model:@book, local: true do |f| %>
 <h4>title</h4>
@@ -23,13 +22,11 @@
 <%= f.text_field :body %>
 <%= f.submit 'Update Book' %>
 <% end %>
-
 <%= link_to "Show", book_path %>
 <%= link_to "Back",books_path %>
-
 <footer>
   <p>CopyRight Infratop.inc</p>
 </footer>
 
-</body>
-</html>
+
+
