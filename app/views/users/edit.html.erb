@@ -16,7 +16,7 @@
 <h4>Name</h4>
 <%= f.text_field :name %>
 <h4>Image</h4>
-<%= attachment_image_tag @user, :profile_image, class: "img-circle" ,  size: "40x40", fallback: "no_image.jpg" %>
+<%= attachment_image_tag @user, :profile_image, class: "img-block" ,  size: "40x40", fallback: "no_image.jpg" %>
 <h4>ProfileImage</h4>
 <%= f.attachment_field :profile_image %>
 <h4>Introduction</h4>
